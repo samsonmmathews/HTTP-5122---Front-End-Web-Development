@@ -38,5 +38,5 @@ else if(dogWalkTemp == false)   // Check for the return value of the function an
 }
 else
 {
-    alert("You’re good, have a nice walk!");
+    alert("You're good, have a nice walk!");
 }
