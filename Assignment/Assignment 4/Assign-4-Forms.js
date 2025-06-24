@@ -47,6 +47,8 @@ function onReady()
 		}
 
         // Humber ID validation
+        // Checking the Humber ID with regex
+        // First letter is 'n' or 'N', followed by 8 numbers
         var idRegex = /^[nN]\d{8}$/;
         if(!idRegex.test(idInput))
         {
@@ -83,7 +85,7 @@ function onReady()
 
         var projectValue = projectField.value;
 
-        //Displaying the output
+        // Displaying the output
         document.getElementById("form").style.display = "none";
 		document.getElementById("result").style.display = "block";
         document.getElementById("result__Fname").innerText = fNameInput;
