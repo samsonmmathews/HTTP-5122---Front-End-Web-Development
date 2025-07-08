@@ -31,7 +31,7 @@ var weekAfterNewYear = newYear.setDate(newYear.getDate() + 7);
 console.log("New Year date after one week: " + newYear.toDateString());
 
 // Javascript timers
-window.setTimeout(timerFunction, 3000);
+var countdown = window.setTimeout(timerFunction, 3000);
 
 function timerFunction() {
     // alert("Countdown has finished");
