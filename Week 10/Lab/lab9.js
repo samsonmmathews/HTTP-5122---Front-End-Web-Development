@@ -24,14 +24,17 @@ function onReady() {
 
     if(userName && userColor)
     {
-        newMsgBox.innerHTML = "Welcome, ${username}!";
+        newMsgBox.innerHTML = "Welcome, " + userName + "!";
         document.body.style.backgroundColor = userColor;
     }
 
     form.onsubmit = processForm;
 
-    function processForm()
+    // Handles the form and prevents default submission
+    function processForm(e)
 	{
+        e.preventDefault();
+
         var name = inputName.value;
         var color = inputColor.value;
         console.log("name: " + name);
@@ -47,23 +50,34 @@ function onReady() {
 
         location.reload();
     }
+
+    // Delete button resets the cookies
+    deleteBtn.onclick = function() {
+
+        makeCookie("userName", "", 0);
+        makeCookie("userColor", "", 0);
+
+        location.reload();
+    }
         //change welcome text to stored name
 
         //change BG colour to stored colour
 
         //  document.body.style.background = 
 
-    return false;
 }
 		
 //#####============== DO THIS PART FIRST! ===============		
     //get the form and set submit listener
 	
+    // Function to create the cookie
     function makeCookie(cookieName, cookieValue, lifespan)
     {
         document.cookie = cookieName + "=" + cookieValue + ";max-age=" + lifespan;
     }
 	
+    // Function to get the cookie - taken from w3schools
+    // https://www.w3schools.com/js/js_cookies.asp
     function getCookie(cookieName)
     {
         let name = cookieName + "=";
