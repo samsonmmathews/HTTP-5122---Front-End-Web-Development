@@ -1,3 +1,11 @@
-body {
-    background-color: rgba(171, 84, 84, 0.493);
+#header {
+    background-color: #D96969;
+}
+
+#main-body {
+    background-image: linear-gradient(#F9BFBF, #737373);
+}
+
+#footer {
+    background-color: #D96969;
 }
