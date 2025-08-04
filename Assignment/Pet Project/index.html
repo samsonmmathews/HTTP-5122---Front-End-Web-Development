@@ -17,6 +17,7 @@
         <div class="controls">
             <!-- Various predefined moods for the user to select -->
             <select id="mood-select">
+                <option value="">-- Select Mood --</option>
                 <option value="happy">Happy</option>
                 <option value="sad">Sad</option>
                 <option value="excited">Excited</option>
@@ -32,9 +33,9 @@
         <div class="buttons">
             <button id="another-movie" style="display: none;">Another Movie</button>
             <div id="wrongEmotion" style="display:none;">
-                <p>Wrong Emotion?</p>
+                <span>Wrong Emotion?</span>
+                <button id="reset">Reset</button>
             </div>
-            <button id="reset" style="display: none;">Reset</button>
         </div>
     </main>
 

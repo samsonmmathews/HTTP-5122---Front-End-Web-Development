@@ -7,6 +7,8 @@ window.onload = function() {
     var wrongEmotion = document.getElementById("wrongEmotion");
     var resetBtn = document.getElementById("reset");
 
+    var defaultBackground = "linear-gradient(#F9BFBF, #737373)";
+
     // User is shown a movie from the custom array of the selected mood
     const movies = {
         happy: ["The Lego Movie", 
@@ -73,16 +75,25 @@ window.onload = function() {
     
     // Surprise me button functionality
     surpriseBtn.addEventListener("click", () => {
-        pickMovie(moodSelect.value);
+
         console.log("surpriseBtn clicked");
+
+        if(!moodSelect.value)
+        {
+            movieDisplay.innerText = "Please select a mood first!";
+            return;
+        }
+
+        pickMovie(moodSelect.value);
     });
 
     // Another movie button functionality
     // If the user is not satisfied with the movie that was displayed,
     // then there should be an option to get another movie
     anotherMovie.addEventListener("click", () => {
-        pickMovie(moodSelect.value);
+
         console.log("anotherMovie clicked");
+        pickMovie(moodSelect.value);        
     });
 
     // Reset button functionality
@@ -93,8 +104,7 @@ window.onload = function() {
         movieDisplay.innerText = "";
         anotherMovie.style.display = "none";
         wrongEmotion.style.display = "none";
-        resetBtn.style.display = "none";
-        document.body.style.background = "linear-gradient(#F9BFBF, #737373)";
+        document.body.style.background = defaultBackground;
     });
 
     function pickMovie(mood)
@@ -105,19 +115,17 @@ window.onload = function() {
         }
 
         var movieList = movies[mood];
-        // console.log("movieList.length: " + movieList.length);
         var randomMovie = movieList[Math.floor(Math.random() * movieList.length)];
         console.log("function pickMovie, mood selected: " + mood);
         console.log("randomMovie: " + randomMovie);
 
         movieDisplay.innerText = "Your movie suggestion: " + randomMovie;
         anotherMovie.style.display = "block";
-        wrongEmotion.style.display = "block";
-        resetBtn.style.display = "block";
+        wrongEmotion.style.display = "flex";
 
         // The screen background changes with the mood the user has selected
         switch(mood) {
-            case "happy": document.body.style.background = "linear-gradient(#FFFFFF, #FFB74D"; break;
+            case "happy": document.body.style.background = "linear-gradient(#FFFFFF, #FFB74D)w"; break;
             case "sad": document.body.style.background = "linear-gradient(#64B5F6, #283593)"; break;
             case "excited": document.body.style.background = "linear-gradient(#db8080, #ee4266)"; break;
             case "relaxed": document.body.style.background = "linear-gradient(#a1fcdf, #61c9a8)"; break;

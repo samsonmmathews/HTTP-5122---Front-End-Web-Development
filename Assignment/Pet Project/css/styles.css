@@ -24,7 +24,6 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    transition: background 0.5s;
 }
 
 .controls select, .controls button, .buttons #button {
@@ -43,8 +42,12 @@ body {
 }
 
 #wrongEmotion {
-    /* margin-top: 10px; */
-    padding-top: 5em;
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    padding-top: 4em;
 }
 
 #movie-display {
@@ -53,7 +56,11 @@ body {
     font-weight: bold;
 }
 
-#movie-display, .buttons {
-    padding-top: 1em;
-    align-items: center;
+.buttons {
+    padding: 2.5em;
+}
+
+#reset {
+    border-radius: 3px;
+    cursor: pointer;
 }
