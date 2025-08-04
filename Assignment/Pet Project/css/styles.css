@@ -26,3 +26,13 @@ body {
     font-size: 1em;
     border-radius: 5px;
 }
+
+#wrongEmotion {
+    /* margin-top: 10px; */
+    padding-top: 10em;
+}
+
+#movie-display, .buttons {
+    padding-top: 1em;
+    align-items: center;
+}

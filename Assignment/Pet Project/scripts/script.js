@@ -4,6 +4,7 @@ window.onload = function() {
     var surpriseBtn = document.getElementById("surprise-me");
     var movieDisplay = document.getElementById("movie-display");
     var anotherMovie = document.getElementById("another-movie");
+    var wrongEmotion = document.getElementById("wrongEmotion");
     var resetBtn = document.getElementById("reset");
 
     const movies = {
@@ -69,25 +70,31 @@ window.onload = function() {
             "Manchester by the Sea"]
     };
     
-    moodSelect.addEventListener("change", () => {
-        pickMovie(moodSelect.value);
-        console.log("moodSelect.value 1:" + moodSelect.value);
-    });
+    // Changed mood
+    // moodSelect.addEventListener("change", () => {
+    //     pickMovie(moodSelect.value);
+    // });
 
-    console.log("moodSelect.value 2:" + moodSelect.value);
-
+    // Surprise me button functionality
     surpriseBtn.addEventListener("click", () => {
         pickMovie(moodSelect.value);
         console.log("surpriseBtn clicked");
     });
 
+    // Another movie button functionality
     anotherMovie.addEventListener("click", () => {
         pickMovie(moodSelect.value);
         console.log("anotherMovie clicked");
     });
 
+    // Reset button functionality
     resetBtn.addEventListener("click", () => {
         console.log("resetBtn clicked");
+        moodSelect.value = "";
+        movieDisplay.innerText = "";
+        anotherMovie.style.display = "none";
+        wrongEmotion.style.display = "none";
+        resetBtn.style.display = "none";
     });
 
     function pickMovie(mood)
@@ -105,6 +112,7 @@ window.onload = function() {
 
         movieDisplay.innerText = "Your movie suggestion: " + randomMovie;
         anotherMovie.style.display = "block";
+        wrongEmotion.style.display = "block";
         resetBtn.style.display = "block";
     }
 }
