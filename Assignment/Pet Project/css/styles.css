@@ -5,9 +5,17 @@ body {
     background-image: linear-gradient(#F9BFBF, #737373);
 }
 #header, #footer {
-    background-color: #D96969;
-    color: white;
-    padding: 1em;
+    background-color: #a53860;
+    color: #ffeedb;
+    padding: 1em;    
+}
+
+#header {
+    border-bottom: 2px solid black;
+}
+
+#footer {
+    border-top: 2px solid black;
 }
 
 #main-body {
@@ -16,7 +24,6 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    /* background-image: linear-gradient(#F9BFBF, #737373); */
     transition: background 0.5s;
 }
 
@@ -28,9 +35,16 @@ body {
     cursor: pointer;
 }
 
+#another-movie {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 #wrongEmotion {
     /* margin-top: 10px; */
-    padding-top: 10em;
+    padding-top: 5em;
 }
 
 #movie-display {

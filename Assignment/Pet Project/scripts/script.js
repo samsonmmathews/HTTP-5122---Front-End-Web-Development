@@ -7,6 +7,7 @@ window.onload = function() {
     var wrongEmotion = document.getElementById("wrongEmotion");
     var resetBtn = document.getElementById("reset");
 
+    // User is shown a movie from the custom array of the selected mood
     const movies = {
         happy: ["The Lego Movie", 
             "Singin' in the Rain",
@@ -77,12 +78,15 @@ window.onload = function() {
     });
 
     // Another movie button functionality
+    // If the user is not satisfied with the movie that was displayed,
+    // then there should be an option to get another movie
     anotherMovie.addEventListener("click", () => {
         pickMovie(moodSelect.value);
         console.log("anotherMovie clicked");
     });
 
     // Reset button functionality
+    // A reset button, if the user has selected a wrong mood
     resetBtn.addEventListener("click", () => {
         console.log("resetBtn clicked");
         moodSelect.value = "";
@@ -111,13 +115,14 @@ window.onload = function() {
         wrongEmotion.style.display = "block";
         resetBtn.style.display = "block";
 
+        // The screen background changes with the mood the user has selected
         switch(mood) {
-            case "happy": document.body.style.background = "linear-gradient(#FFF176, #FFB74D"; break;
+            case "happy": document.body.style.background = "linear-gradient(#FFFFFF, #FFB74D"; break;
             case "sad": document.body.style.background = "linear-gradient(#64B5F6, #283593)"; break;
-            case "excited": document.body.style.background = "linear-gradient(#FF4081, #F50057)"; break;
-            case "relaxed": document.body.style.background = "linear-gradient(#A5D6A7, #66BB6A)"; break;
-            case "adventurous": document.body.style.background = "linear-gradient(#FF8A65, #D84315)"; break;
-            case "thoughtful": document.body.style.background = "linear-gradient(#B39DDB, #512DA8)"; break;
+            case "excited": document.body.style.background = "linear-gradient(#db8080, #ee4266)"; break;
+            case "relaxed": document.body.style.background = "linear-gradient(#a1fcdf, #61c9a8)"; break;
+            case "adventurous": document.body.style.background = "linear-gradient(#FF8A65, #d06140ff)"; break;
+            case "thoughtful": document.body.style.background = "linear-gradient(#FFFFFF, #512DA8)"; break;
         }
     }
 }
