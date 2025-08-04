@@ -70,11 +70,6 @@ window.onload = function() {
             "Manchester by the Sea"]
     };
     
-    // Changed mood
-    // moodSelect.addEventListener("change", () => {
-    //     pickMovie(moodSelect.value);
-    // });
-
     // Surprise me button functionality
     surpriseBtn.addEventListener("click", () => {
         pickMovie(moodSelect.value);
@@ -95,6 +90,7 @@ window.onload = function() {
         anotherMovie.style.display = "none";
         wrongEmotion.style.display = "none";
         resetBtn.style.display = "none";
+        document.body.style.background = "linear-gradient(#F9BFBF, #737373)";
     });
 
     function pickMovie(mood)
@@ -114,5 +110,14 @@ window.onload = function() {
         anotherMovie.style.display = "block";
         wrongEmotion.style.display = "block";
         resetBtn.style.display = "block";
+
+        switch(mood) {
+            case "happy": document.body.style.background = "linear-gradient(#FFF176, #FFB74D"; break;
+            case "sad": document.body.style.background = "linear-gradient(#64B5F6, #283593)"; break;
+            case "excited": document.body.style.background = "linear-gradient(#FF4081, #F50057)"; break;
+            case "relaxed": document.body.style.background = "linear-gradient(#A5D6A7, #66BB6A)"; break;
+            case "adventurous": document.body.style.background = "linear-gradient(#FF8A65, #D84315)"; break;
+            case "thoughtful": document.body.style.background = "linear-gradient(#B39DDB, #512DA8)"; break;
+        }
     }
 }
