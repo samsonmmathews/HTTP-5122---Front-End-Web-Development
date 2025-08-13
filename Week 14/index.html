@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="script.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h1>Week 13 - Multimedia</h1>
+
+        <h2>Audio</h2>
+        <div>
+            <audio id="audioPlayer">
+                <source src="bonk.mp3" type="audio/mp3">
+                <source src="bonk.wav" type="audio/wav">
+                Audio unplayable
+            </audio>
+        </div>
+
+        <div>
+            <button id="playButton">Play</button>
+            <button id="pauseButton">Pause</button>
+        </div>
+
+        <h2>Video</h2>
+        <div>
+            <video id="videoPlayer" width="640" height="480" controls>
+                <source src="ducks.mp4" type="video/mp4">
+                <source src="ducks.webm" type='video/web, codecs="vp8, vorbis"'>
+            </video>
+        </div>
+
+        <div>
+            <button id="videoPlayButton">Play</button>
+            <button id="videoPauseButton">Pause</button>
+            <button id="videoStopButton">Stop</button>
+            <button id="videoToggleButton" > &#9658; </button><!--THE HTML ENTITY FOR A PLAY BUTTON -->
+            <button id="videoSkipButton" >Skip 10 sec</button>
+        </div>
+
+        <h2>Vector Images</h2>
+
+        <div id="svgDiv">
+
+            <svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <rect width="150" height="50" fill="blue" />
+                <circle id="c1" cx="25" cy="25" r="20" stroke="#22B14C" stroke-width="4" fill="rgb(255,242,0)" />
+                <line x1="13" y1="27" x2="25" y2="37" stroke-width="5" stroke="red" stroke-linecap="round" />
+		        <line x1="25" y1="37" x2="37" y2="17" stroke-width="5" stroke="red" stroke-linecap="round" />
+                <text id="txttest" x="60" y="30" font-size="22" font-family="monospace" fill="red" >Quality</text>
+                <!-- Elements are created in order, from top to bottom - will affect layers  -->
+            </svg>
+
+            <div id="triangleSvg">
+                <svg width="300" height="200">
+                    <polygon points="150,20 40,180 260,180" id="triangle"
+                        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                </svg>
+            </div>
+
+        </div>
+
+    </body>
+</html>
